@@ -1,49 +1,41 @@
-import Carousel from '../../components/Carousel/Carousel';
+import Carousel from "../../components/Carousel/Carousel";
 import './HomePage.css';
+import { products } from "../../data/products";
+import { carousel_images } from "../../data/carousel_images";
 
-
-
-const carousel_images =[
-{
-
-id : 1,
-img_src :'/images/Carousel/css.png',
-title : 'buhahahaha',
-caption : "yuhohoho!!!"
-},
-{
-
-id : 2,
-img_src : '/images/Carousel/html.png',
-title : 'buhahahaha',
-caption : "yuhohoho!!!"
-},
-
-{
-id : 3,
-img_src : '/images/Carousel/React.png',
-title : 'buhahahaha',
-caption : "yuhohoho!!!"
-},
-
-]
-
-
+import ProductCard from "../../components/productsCard/productCard";
 
 function HomePage() {
-    return (<>
+    return (
         <div className="container h-100">
-            <div className="row home_carousel">
-        <div className="col bg-primary flex-column h-100">
-            <Carousel  images  = {carousel_images} />
-        </div>
-            <div className="col bg-success h-100">manju</div>
-            
+            <div className="row home_banner ">
+                <div className="col d-flex flex-column h-100">
+                    <Carousel images={carousel_images} />
+                </div>
+                <div className="col bg-success h-100"></div>
+            </div>
+
+            {/* <div className="container row">
+                <ol>
+                {
+                    products_list.map((product, index)=>(
+                        <li>{product.title} - Rs.{product.price}</li>
+                    ))
+                }
+                </ol>
+            </div> */}
+
+            <div className="card-group my-2 ">
+
+                {products.map((product, index) => (
+                    <ProductCard product={product} key={product.id} />
+                ))
+
+                }
+
             </div>
         </div>
-        
-
-    </>)
+    );
 }
 
 export default HomePage;

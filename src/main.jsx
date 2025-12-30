@@ -7,8 +7,12 @@ import App from './App.jsx'
 
 import 'bootstrap/dist/js/bootstrap.min.js'
 
+import { RouterProvider } from 'react-router-dom';
+
+import my_router from './components/router/router.jsx'
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <RouterProvider router={my_router} />
   </StrictMode>,
 )
