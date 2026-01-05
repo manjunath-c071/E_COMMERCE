@@ -7,6 +7,7 @@ import App from '../../App.jsx';
 
 import HomePage from '../../pages/Home/HomePage';
 import AboutPage from '../../pages/about/Aboutpage';
+import ProductsDetails from '../ProductsDetails/ProductsDetails.jsx'; 
 
 
 // generating the router object providing array of 'path - page' pairs.
@@ -25,6 +26,10 @@ const my_router = createBrowserRouter(
                 {
                     path: "/about",
                     element: <AboutPage />
+                },
+                {
+                    path: "/product/:id",
+                    element: <ProductsDetails />
                 }
             ]
         }
